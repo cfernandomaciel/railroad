@@ -15,7 +15,7 @@
     "TraderFleet"
   ],
   "author": "Claudio Fernando Maciel <claudio@pipeleap.com>",
-  "license": "ISC",
+  "license": "Proprietary",
   "dependencies": {
     "body-parser": "^1.19.0"
   },
