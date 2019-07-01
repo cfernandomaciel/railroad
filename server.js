@@ -20,10 +20,10 @@ watchdog.initialize(machinist => {
   machinist.guide({ 'PubSubLocomotive': ['InfluxLocomotive', 'CourierWagon'] });
   machinist.guide({ 'SocketLocomotive': ['InfluxLocomotive', 'CourierWagon'] });
 
-  machinist.watch(pubSubLocomotive);
-  machinist.watch(socketLocomotive);
-
-  machinist.watch(influxWagon);
-  machinist.watch(courierWagon);
-
 });
+
+Operator.watch(pubSubLocomotive);
+Operator.watch(socketLocomotive);
+
+Operator.watch(influxWagon);
+Operator.watch(courierWagon);

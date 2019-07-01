@@ -45,7 +45,11 @@ const SocketLocomotive = () => ({
       let partition = 1;
       let topic = Station.extract(topics, msg, { partition });
   
-      producer.send(msg, topic);
+      let result = await = producer.send(msg, topic);
+
+      result.on(() => {
+
+      });
   
     });
   

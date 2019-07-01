@@ -36,7 +36,9 @@ const InfluxWagon = () => ({
 
     trade.on('message', (err, msg) => {
 
-      Influx.write(tradeModel);
+      if(err) throw err;
+      
+      Influx.write(tradeModel, msg);
 
     });
 

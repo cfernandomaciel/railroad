@@ -30,6 +30,8 @@ const CourierWagon = () => ({
 
     trade.on('message', (err, msg) => {
 
+      if(err) throw err;
+
       courier = await Courier.send(Station.extractSingle(topics, 'trade'), msg);
 
       courier.on('success', msg => console.log);
