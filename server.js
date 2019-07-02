@@ -1,29 +1,45 @@
 
-const { Operator } = require('@railroad/operator');
+const { operator } = require('@railroad/operator');
 
-const pubSubLocomotive = Object.assign({}, require('./locomotives/pubsub.locomotive')());
-const socketLocomotive = Object.assign({}, require('./locomotives/socket.locomotive')());
+const station = { pair: process.argv[2], exchange: process.argv[3] }; // LTCBTC
 
-const influxWagon      = Object.assign({}, require('./wagons/influx.wagon')());
-const courierWagon     = Object.assign({}, require('./wagons/courier.wagon')());
 
-pubSubLocomotive.init();
-socketLocomotive.init();
+const SocketLocomotive = {
+  name: 'SocketLocomotive',
+  init: () => {
+    console.log('initializing SocketLocomotive');
+  },
+};
+const InfluxWagon = {
+  name: 'InfluxWagon',
+  init: () => {
+    console.log('initializing InfluxWagon');
+  },
+};
+const CourierWagon = {
+  name: 'CourierWagon',
+  init: () => {
+    console.log('initializing CourierWagon');
+  },
+};
 
-influxWagon.init();
-courierWagon.init();
+// it comes from process.argv[]
+const circuit = operator.circuit(`${station.exchange}-${station.pair}`);
 
-const watchdog = Operator.watchdog();
 
-watchdog.initialize(machinist => {
+circuit.initialize((machinist, watchdog) => {
+  // machinist.guide(); //throws UnimplementedCallbackException 
+  machinist.guide({ SocketLocomotive: ['InfluxWagon', 'CourierWagon'] });
+  // machinist.guide({ PubsubLocomotive: ['InfluxWagon', 'CourierWagon'] });
 
-  machinist.guide({ 'PubSubLocomotive': ['InfluxLocomotive', 'CourierWagon'] });
-  machinist.guide({ 'SocketLocomotive': ['InfluxLocomotive', 'CourierWagon'] });
+  watchdog.watch(SocketLocomotive, InfluxWagon, CourierWagon);
 
 });
 
-Operator.watch(pubSubLocomotive);
-Operator.watch(socketLocomotive);
+// throws AlreadyInitializedException
+// circuit.initialize(machinist => {
+//   machinist.guide({ 'SocketLocomotive': ['InfluxWagon', 'CourierWagon'] });
+// });
 
-Operator.watch(influxWagon);
-Operator.watch(courierWagon);
+
+console.log('available trains: ', JSON.stringify(circuit.trains, null, 1));

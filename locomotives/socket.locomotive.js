@@ -3,10 +3,10 @@ const config = require('./config');
 const { SocketConnector, PubSubConnector, RPCConnector, KafkaProducer } = require('@railroad/locomotive');
 const { Station } = require('@railroad/station');
 
-const stationFile = require('./station');
+const stationsFile = require('./stations');
 
-const wssChannels = Station.load(stationFile).channels;
-const topics = Station.load(stationFile).topics;
+const wssChannels = Station.load(stationsFile).channels;
+const topics = Station.load(stationsFile).topics;
 
 const { trade, candle, ticker, depth } = wssChannels;
 
