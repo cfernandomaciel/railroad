@@ -28,7 +28,9 @@ const circuit = operator.circuit(`${station.exchange}-${station.pair}`);
 
 
 circuit.initialize((machinist, watchdog) => {
-  // machinist.guide(); //throws UnimplementedCallbackException 
+
+  // machinist.guide(); // throws UnimplementedCallbackException 
+
   machinist.guide({ SocketLocomotive: ['InfluxWagon', 'CourierWagon'] });
   // machinist.guide({ PubsubLocomotive: ['InfluxWagon', 'CourierWagon'] });
 
@@ -37,8 +39,9 @@ circuit.initialize((machinist, watchdog) => {
 });
 
 // throws AlreadyInitializedException
-// circuit.initialize(machinist => {
+// circuit.initialize((machinist, watchdog) => {
 //   machinist.guide({ 'SocketLocomotive': ['InfluxWagon', 'CourierWagon'] });
+//   watchdog.watch(SocketLocomotive, InfluxWagon, CourierWagon);
 // });
 
 
