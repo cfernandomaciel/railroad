@@ -1,21 +1,10 @@
 
 const { operator } = require('@railroad/operator');
+const SocketLocomotive = require('./locomotives/socket.locomotive');
+const InfluxWagon = require('./wagons/influx.wagon');
 
 const station = { pair: process.argv[2], exchange: process.argv[3] }; // LTCBTC
 
-
-const SocketLocomotive = {
-  name: 'SocketLocomotive',
-  init: () => {
-    console.log('initializing SocketLocomotive');
-  },
-};
-const InfluxWagon = {
-  name: 'InfluxWagon',
-  init: () => {
-    console.log('initializing InfluxWagon');
-  },
-};
 const CourierWagon = {
   name: 'CourierWagon',
   init: () => {
@@ -34,7 +23,10 @@ circuit.initialize((machinist, watchdog) => {
   machinist.guide({ SocketLocomotive: ['InfluxWagon', 'CourierWagon'] });
   // machinist.guide({ PubsubLocomotive: ['InfluxWagon', 'CourierWagon'] });
 
-  watchdog.watch(SocketLocomotive, InfluxWagon, CourierWagon);
+  const socketLocomotive = Object.assign({}, SocketLocomotive());
+  const influxWagon = Object.assign({}, InfluxWagon());
+
+  watchdog.watch(socketLocomotive, influxWagon, CourierWagon);
 
 });
 

@@ -18,7 +18,9 @@
   "author": "Claudio Fernando Maciel <claudio@pipeleap.com>",
   "license": "Proprietary",
   "dependencies": {
+    "@railroad/locomotive": "0.0.1",
     "@railroad/operator": "0.0.1",
+    "@railroad/wagon": "0.0.1",
     "body-parser": "^1.19.0"
   },
   "devDependencies": {
