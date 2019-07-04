@@ -1,72 +1,69 @@
-const config = require('./config');
 
 const { SocketConnector, PubSubConnector, RPCConnector, KafkaProducer } = require('@railroad/locomotive');
 const { Station } = require('@railroad/station');
+const config = require('./config');
 
 const stationsFile = require('./stations');
 
 const wssChannels = Station.load(stationsFile).channels;
-const topics = Station.load(stationsFile).topics;
+const {topics} = Station.load(stationsFile);
 
-const { trade, candle, ticker, depth } = wssChannels;
+const {
+ trade, candle, ticker, depth 
+} = wssChannels;
 
-let wssTrade  = null;
+let wssTrade = null;
 let wssCandle = null;
 let wssTicker = null;
-let wssDepth  = null;
+let wssDepth = null;
 
-let producer  = null;
+let producer = null;
 
-let socketTrade   = null;
-let socketCandle  = null;
-let socketTicker  = null;
-let socketDepth   = null;
-
+let socketTrade = null;
+let socketCandle = null;
+let socketTicker = null;
+let socketDepth = null;
 
 
 const SocketLocomotive = () => ({
   init: () => {
 
-    wssTrade  = new SocketConnector({ wss: trade });
-    wssCandle = new SocketConnector({ wss: candle });
-    wssTicker = new SocketConnector({ wss: ticker });
-    wssDepth  = new SocketConnector({ wss: depth });
+    wssTrade = SocketConnector.init({ wss: trade });
+    wssCandle = SocketConnector.init({ wss: candle });
+    wssTicker = SocketConnector.init({ wss: ticker });
+    wssDepth = SocketConnector.init({ wss: depth });
   
-    producer  = new KafkaProducer({ host: config.kafka.host });
+    producer = new KafkaProducer({ host: config.kafka.host });
   
-    socketTrade   = await wssTrade.connect();
-    socketCandle  = await wssCandle.connect();
-    socketTicker  = await wssTicker.connect();
-    socketDepth   = await wssDepth.connect();
+    socketTrade = wssTrade.connect();
+    socketCandle = wssCandle.connect();
+    socketTicker = wssTicker.connect();
+    socketDepth = wssDepth.connect();
 
     socketTrade.on('message', (err, msg) => {
-      if(err) throw err;
+      if (err) throw err;
   
-      let partition = 1;
-      let topic = Station.extract(topics, msg, { partition });
+      const partition = 1;
+      const topic = Station.extract(topics, msg, { partition });
   
-      let result = await = producer.send(msg, topic);
-
-      result.on(() => {
-
-      });
-  
+      producer.send(msg, topic);
+      
     });
   
     socketTrade.on('error', (err) => {
       
-      let partition = 10;
-      let topic = Station.extractErrorTopic(topics, 'trade', { partition });
+      const partition = 10;
+      const topic = Station.extractErrorTopic(topics, 'trade', { partition });
   
       producer.send(err, topic);
   
     });
   
     socketCandle.on('message', (err, msg) => {
-      if(err) throw err;
+      if (err) throw err;
   
-      let partition = 1;
-      let topic = Station.extract(topics, msg, { partition });
+      const partition = 1;
+      const topic = Station.extract(topics, msg, { partition });
   
       producer.send(msg, topic);
   
@@ -74,18 +71,18 @@ const SocketLocomotive = () => ({
   
     socketCandle.on('error', (err) => {
       
-      let partition = 10;
-      let topic = Station.extractErrorTopic(topics, 'candle', { partition });
+      const partition = 10;
+      const topic = Station.extractErrorTopic(topics, 'candle', { partition });
   
       producer.send(err, topic);
   
     });
   
     socketTicker.on('message', (err, msg) => {
-      if(err) throw err;
+      if (err) throw err;
   
-      let partition = 1;
-      let topic = Station.extract(topics, msg, { partition });
+      const partition = 1;
+      const topic = Station.extract(topics, msg, { partition });
   
       producer.send(msg, topic);
   
@@ -93,8 +90,8 @@ const SocketLocomotive = () => ({
   
     socketTicker.on('error', (err) => {
       
-      let partition = 10;
-      let topic = Station.extractErrorTopic(topics, 'ticker', { partition });
+      const partition = 10;
+      const topic = Station.extractErrorTopic(topics, 'ticker', { partition });
   
       producer.send(err, topic);
   
@@ -102,10 +99,10 @@ const SocketLocomotive = () => ({
   
   
     socketDepth.on('message', (err, msg) => {
-      if(err) throw err;
+      if (err) throw err;
   
-      let partition = 1;
-      let topic = Station.extract(topics, msg, { partition });
+      const partition = 1;
+      const topic = Station.extract(topics, msg, { partition });
   
       producer.send(msg, topic);
   
@@ -113,12 +110,21 @@ const SocketLocomotive = () => ({
   
     socketDepth.on('error', (err) => {
       
-      let partition = 10;
-      let topic = Station.extractErrorTopic(topics, 'depth', { partition });
+      const partition = 10;
+      const topic = Station.extractErrorTopic(topics, 'depth', { partition });
   
       producer.send(err, topic);
   
     });
+
+    producer.on('ack', (message) => {
+      // acknowledge message threatment here
+    });
+
+    producer.on('error', (error) => {
+      // error treatment here
+    });
+
 
   },
 });
