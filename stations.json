@@ -1,0 +1,8 @@
+{
+  "name": "binance",
+  "trade": "wss:binance.com@trade",
+  "candle": "wss:binance.com@candle",
+  "ticker": "wss:binance.com@ticker",
+  "depth": "wss:binance.com@depth",
+  "stations": ["ETHBTC", "LTCUST"]
+}
