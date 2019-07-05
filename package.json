@@ -19,7 +19,7 @@
   "license": "Proprietary",
   "dependencies": {
     "@railroad/locomotive": "0.0.2",
-    "@railroad/operator": "0.0.3",
+    "@railroad/operator": "0.0.4",
     "@railroad/wagon": "0.0.2",
     "body-parser": "^1.19.0"
   },
