@@ -29,9 +29,9 @@ const config = {
 };
 
 let consumer = null;
-let Influx   = null;
+let Influx = null;
 
-let trade   = null;
+// const trade = null;
 // let candle  = null;
 // let ticker  = null;
 // let depth   = null;
@@ -99,17 +99,17 @@ const InfluxWagon = () => ({
           //   .then((results) => {
           //     res.json(results);
           //   });
-        }).
-        catch((exception) => {
-          console.error(exception);
         })
+        .catch((exception) => {
+          console.error(exception);
+        });
     
     
       // console.log('kafka consumer message: ', JSON.parse(message));
     });
 
     
-  }
+  },
 });
 
 module.exports = InfluxWagon;

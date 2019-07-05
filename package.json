@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "npm test",
-    "linter": "./node_modules/.bin/eslint server.js"
+    "linter": "./node_modules/.bin/eslint server.js locomotives/** wagons/**"
   },
   "repository": {
     "type": "git",

@@ -20,7 +20,7 @@ let wssTrade = null;
 
 let producer = null;
 
-let socketTrade = null;
+// let socketTrade = null;
 // let socketCandle = null;
 // let socketTicker = null;
 // let socketDepth = null;
@@ -55,7 +55,7 @@ const SocketLocomotive = () => ({
       requireAcks: config.kafka.requireAcks,
       ackTimeoutMs: config.kafka.ackTimeoutMs,
       partitionerType: config.kafka.partitionerType,
-     });
+    });
   
     wssTrade.connect();
     // socketCandle = wssCandle.connect();

@@ -1,5 +1,5 @@
 
-const { CourierConnector, KafkaConsumer } = require('@railroad/wagon');
+// const { CourierConnector, KafkaConsumer } = require('@railroad/wagon');
 // const { Station } = require('@railroad/station');
 
 // const config = require('./config');
@@ -50,5 +50,3 @@ const CourierWagon = () => ({
 });
 
 module.exports = CourierWagon;
-
-
