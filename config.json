@@ -1,0 +1,10 @@
+{
+  "kafka": {
+    "host": "kafka.dev.pipeleap.com:9092",
+    "timeout": 1000,
+    "autoConnect": true,
+    "requireAcks": 1,
+    "ackTimeoutMs": 100,
+    "partitionerType": 0
+  }
+}
