@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "npm test",
-    "linter": "./node_modules/.bin/eslint server.js locomotives/** wagons/**"
+    "linter": "./node_modules/.bin/eslint server.js locomotives/** wagons/**",
+    "start": "./node_modules/.bin/node server.js Sample foobar FooLine"
   },
   "repository": {
     "type": "git",
