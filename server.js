@@ -1,20 +1,16 @@
 
 const { operator } = require('@railroad/operator');
 
-const SocketLocomotive = require('./locomotives/socket.locomotive');
-const InfluxWagon = require('./wagons/influx.wagon');
-const CourierWagon = require('./wagons/courier.wagon');
+const SampleLocomotive = require('./locomotives/sample.locomotive');
+const SampleWagon = require('./wagons/sample.wagon');
 
-
-const line = { pair: process.argv[2], exchange: process.argv[3] }; // LTCBTC
-
-
-const station = operator.station(`${line.exchange}-${line.pair}`);
+const stationName = process.argv[2];
+const station = operator.station(stationName);
 
 station.initialize((machinist, watchdog) => {
 
-  machinist.guide({ SocketLocomotive: ['InfluxWagon', 'CourierWagon'] });
+  machinist.guide({ SampleLocomotive: ['SampleWagon'] });
 
-  watchdog.watch(SocketLocomotive, InfluxWagon, CourierWagon);
+  watchdog.watch(SampleLocomotive, SampleWagon);
 
 });
