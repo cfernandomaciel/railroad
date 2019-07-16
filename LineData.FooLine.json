@@ -1,0 +1,10 @@
+{
+	"name": "Sample",
+	"channels": [
+		{
+			"name": "foo", 
+			"host": "wss://stream.binance.com:9443/ws/<placeholder>@foo" 
+		}
+	],
+	"stations": ["FOOBAR", "BARFOO"]
+}
