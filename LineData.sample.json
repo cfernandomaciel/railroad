@@ -1,6 +1,6 @@
 {
 	"name": "sample",
-	"channels": [
+	"gates": [
 		{
 			"name": "foo", 
 			"host": "wss://stream.binance.com:9443/ws/<placeholder>@foo" 
