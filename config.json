@@ -6,5 +6,18 @@
     "requireAcks": 1,
     "ackTimeoutMs": 100,
     "partitionerType": 0
+  },
+  "portSocket": 2999,
+  "host": "localhost",
+  "payloadLimit": "50mb",
+  "faas": {
+    "portRange": [15000, 16000],
+    "serviceName": "railroad-faas",
+    "apiPath": "api/v1/",
+    "provider": "aws",
+    "runtime": "nodejs10.x",
+    "plugins": [
+      "serverless-offline"
+    ]
   }
 }
