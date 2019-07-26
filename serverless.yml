@@ -7,16 +7,4 @@ plugins:
   - serverless-offline
 
 functions:
-  hello:
-    handler: handler.sample.hello
-    events:
-      - http:
-         path: hello
-         method: get
-  calculate:
-    handler: handler.sample.calculate
-    events:
-      - http:
-         path: math/calculate
-         method: get
 

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm test",
     "linter": "./node_modules/.bin/eslint server.js locomotives/** wagons/**",
-    "start": "./node_modules/.bin/node server.js foobar sample serverless.sample.yml"
+    "start": "./node_modules/.bin/node server.js main sample-line"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,11 @@
+{
+	"name": "sample-line",
+	"gates": [
+		{
+			"name": "", 
+			"host": "wss://stream.binance.com:9443/ws/<placeholder>@foo",
+			"type": "socket"
+		}
+	],
+	"stations": ["MAIN"]
+}
