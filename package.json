@@ -20,7 +20,7 @@
   "license": "Proprietary",
   "dependencies": {
     "@railroad/locomotive": "0.0.5",
-    "@railroad/operator": "0.0.7",
+    "@railroad/operator": "0.0.8",
     "@railroad/wagon": "0.0.5",
     "body-parser": "^1.19.0",
     "portscanner": "^2.2.0"
