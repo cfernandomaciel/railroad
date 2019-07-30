@@ -17,10 +17,10 @@
     "TraderFleet"
   ],
   "author": "Claudio Fernando Maciel <claudio@pipeleap.com>",
-  "license": "Proprietary",
+  "license": "UNLICENSED",
   "dependencies": {
     "@railroad/locomotive": "0.0.5",
-    "@railroad/operator": "0.1.0",
+    "@railroad/operator": "0.1.2",
     "@railroad/wagon": "0.0.5",
     "body-parser": "^1.19.0",
     "portscanner": "^2.2.0"
