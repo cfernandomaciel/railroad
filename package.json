@@ -1,6 +1,6 @@
 {
   "name": "railroad",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Railroad for TraderFleet",
   "main": "server.js",
   "scripts": {
