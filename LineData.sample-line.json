@@ -2,9 +2,13 @@
 	"name": "sample-line",
 	"gates": [
 		{
-			"name": "", 
-			"host": "wss://stream.binance.com:9443/ws/<placeholder>@foo",
-			"type": "socket"
+			"name": "samplegate", 
+			"host": "wss://echo.websocket.org/",
+			"type": "socket",
+			"payload": {
+				"type": "url",
+				"content": "<placehoolder>@samplegate"
+			}
 		}
 	],
 	"stations": ["MAIN"]
