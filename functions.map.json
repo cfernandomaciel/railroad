@@ -1,1 +1,8 @@
-[]
+[
+  {
+   "name": "exchangewebsockets",
+   "handler": "handler.bCZ9eOrbB.exchangewebsockets",
+   "path": "normalize/exchangewebsockets",
+   "method": "post"
+  }
+ ]

@@ -1,6 +1,6 @@
 {
   "name": "railroad",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Railroad for TraderFleet",
   "main": "server.js",
   "scripts": {
@@ -19,9 +19,10 @@
   "author": "Claudio Fernando Maciel <claudio@pipeleap.com>",
   "license": "UNLICENSED",
   "dependencies": {
-    "@railroad/locomotive": "0.0.5",
-    "@railroad/operator": "0.1.2",
-    "@railroad/wagon": "0.0.5",
+    "@railroad/locomotive": "0.1.0",
+    "@railroad/courier": "0.1.0",
+    "@railroad/operator": "0.1.6",
+    "@railroad/wagon": "0.1.0",
     "body-parser": "^1.19.0",
     "portscanner": "^2.2.0"
   },

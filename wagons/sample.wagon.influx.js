@@ -1,11 +1,11 @@
 const { InfluxConnector, KafkaConsumer } = require('@railroad/wagon');
 
 
-const SampleWagon = () => ({
-  name: 'SampleWagon',
-  init: () => {
+const SampleWagonInflux = () => ({
+  name: 'SampleWagonInflux',
+  init: (port) => {
     throw new Error('Unimplemented Wagon');
   },
 });
 
-module.exports = SampleWagon;
+module.exports = SampleWagonInflux;
