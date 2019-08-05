@@ -1,9 +1,9 @@
 const { SocketConnector, KafkaProducer } = require('@railroad/locomotive');
 
-const LineName = process.argv[3] || 'sample-line';
+const LineName = process.env.LINE || 'sample-line';
 const LineData = require(`./../LineData.${LineName}`);
 
-const stationName = process.argv[2];
+const stationName = process.env.STATION;
 const sampleTopic = `${LineName}-samplegate`;
 
 let producer = null;

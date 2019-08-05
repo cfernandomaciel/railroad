@@ -12,7 +12,7 @@ const faasConfig = config.faas;
 const { host } = config;
 
 
-const stationName = process.argv[2];
+const stationName = process.env.STATION;
 const station = operator.station(stationName);
 
 const serverlessPath = 'serverless.yml';
