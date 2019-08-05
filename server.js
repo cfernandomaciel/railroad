@@ -5,7 +5,8 @@ const SampleLocomotive = require('./locomotives/sample.locomotive');
 const SampleWagonInflux = require('./wagons/sample.wagon.influx');
 const SampleWagonCourier = require('./wagons/sample.wagon.courier');
 
-const config = require('./config');
+const configName = `./config.${process.env.NODE_ENV}`;
+const config = require(configName);
 const functions = require('./functions.map.json');
 
 const faasConfig = config.faas;

@@ -10,6 +10,9 @@ let producer = null;
 let samplegate;
 let wssSample = null;
 
+const configName = `./../config.${process.env.NODE_ENV}`;
+const config = require(configName);
+
 const execute = ( { samplegate } ) => {
 
   /*
