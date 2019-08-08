@@ -11,21 +11,14 @@ RailRoad is a [Java Storm Like](https://storm.apache.org/) ... (topic to be expa
 
 ## Installation
 
-Use the package manager [npm](http://npmjs.com/) to install foobar.
+You can either clone this scaffold from our repo, and use it, or you can use Railroad Cli [https://npmjs.com/railroad-cli](https://npmjs.com/railroad-cli) like so.
 
 ```bash
-pip install foobar
+npm i railroad-cli -g
+
+railroad init
 ```
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
 
 ## Roadmap
 

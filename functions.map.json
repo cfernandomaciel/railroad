@@ -1,8 +1,8 @@
 [
   {
-   "name": "exchangewebsockets",
-   "handler": "handler.bCZ9eOrbB.exchangewebsockets",
-   "path": "normalize/exchangewebsockets",
-   "method": "post"
+   "name": "ping",
+   "handler": "handler.bCZ9eOrbB.ping",
+   "path": "health/ping",
+   "method": "get"
   }
  ]

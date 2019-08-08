@@ -7,4 +7,10 @@ plugins:
   - serverless-offline
 
 functions:
+  ping:
+    handler: handler.bCZ9eOrbB.ping
+    events:
+      - http:
+         path: health/ping
+         method: get
 

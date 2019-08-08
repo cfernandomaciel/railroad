@@ -9,7 +9,21 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/server.js",
-      "args": ["binance", "ethbtc"]
-    }
+      "env": {
+        "NODE_ENV": "local",
+        "STATION": "ETHBTC",
+        "LINE": "binance"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Serverless",
+      "program": "${workspaceFolder}/server.js",
+      "env": {
+        "NODE_ENV": "local",
+        "STATION": "ETHBTC",
+        "LINE": "binance"
+      }
   ]
 }
