@@ -11,6 +11,7 @@
   "host": "localhost",
   "payloadLimit": "50mb",
   "faas": {
+    "consul": "localhost",
     "host": "http://fx.dev.pipeleap.com",
     "portRange": [15000, 16000],
     "serviceName": "railroad-faas",
