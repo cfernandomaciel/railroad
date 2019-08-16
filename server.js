@@ -29,12 +29,3 @@ station.initialize((machinist, watchdog, commuter) => {
   watchdog.watch(SampleLocomotive, SampleWagonInflux, SampleWagonCourier);
   
 });
-
-
-process.once('SIGINT', (code) => {
-  process.exit(code);
-});
-
-process.once('SIGTERM', (code) => {
-  process.exit(code);
-});
