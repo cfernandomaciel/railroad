@@ -1,7 +1,7 @@
 const pingIt = () => {
   return {
-    response: 'pong'
-  }
+    response: 'pong',
+  },
 };
 
 module.exports.ping = pingIt;
