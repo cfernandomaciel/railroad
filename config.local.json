@@ -10,9 +10,12 @@
   "portSocket": 2999,
   "host": "localhost",
   "payloadLimit": "50mb",
+  "influx": {
+    "host": "influxdb.dev.pipeleap.com"
+  },
   "faas": {
-    "consul": "localhost",
-    "host": "http://localhost:15000",
+    "consul": "consul.dev.pipeleap.com",
+    "host": "http://10.11.1.210:14000",
     "portRange": [15000, 16000],
     "serviceName": "railroad-faas",
     "apiPath": "api/v1/",
