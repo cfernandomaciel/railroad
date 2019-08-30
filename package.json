@@ -20,7 +20,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@railroad/locomotive": "0.1.6",
-    "@railroad/wagon": "0.1.4",
+    "@railroad/wagon": "0.1.6",
     "@railroad/courier": "0.1.0",
     "@railroad/operator": "0.3.7",
     "body-parser": "^1.19.0",
