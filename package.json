@@ -19,10 +19,10 @@
   "author": "Claudio Fernando Maciel <claudio@pipeleap.com>",
   "license": "UNLICENSED",
   "dependencies": {
-    "@railroad/locomotive": "0.1.6",
-    "@railroad/wagon": "0.1.6",
+    "@railroad/locomotive": "0.2.5",
+    "@railroad/wagon": "0.2.5",
     "@railroad/courier": "0.1.0",
-    "@railroad/operator": "0.3.7",
+    "@railroad/operator": "0.3.8",
     "body-parser": "^1.19.0",
     "portscanner": "^2.2.0"
   },
