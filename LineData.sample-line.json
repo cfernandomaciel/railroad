@@ -1,5 +1,6 @@
 {
 	"name": "sample-line",
+	"type": "multiplexed",
 	"gates": [
 		{
 			"name": "samplegate", 
