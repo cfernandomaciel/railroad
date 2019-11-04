@@ -22,7 +22,7 @@
     "@railroad/locomotive": "0.3.7",
     "@railroad/wagon": "0.3.7",
     "@railroad/courier": "0.1.0",
-    "@railroad/operator": "0.4.3",
+    "@railroad/operator": "0.4.9",
     "body-parser": "^1.19.0",
     "portscanner": "^2.2.0"
   },
