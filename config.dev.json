@@ -1,6 +1,6 @@
 {
   "kafka": {
-    "host": "kafka.dev.pipeleap.com:9092",
+    "host": "kafka.dev.traderfleet.com:9092",
     "timeout": 1000,
     "autoConnect": true,
     "requireAcks": 1,
@@ -11,11 +11,11 @@
   "host": "localhost",
   "payloadLimit": "50mb",
   "influx": {
-    "host": "influxdb.dev.pipeleap.com"
+    "host": "influxdb.dev.traderfleet.com"
   },
   "faas": {
-    "consul": "consul.dev.pipeleap.com",
-    "host": "http://10.11.1.210:14000",
+    "consul": "consul.dev.traderfleet.com",
+    "host": "http://10.11.1.117:14000",
     "portRange": [15000, 16999],
     "serviceName": "railroad-faas",
     "apiPath": "api/v1/",
