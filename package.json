@@ -19,11 +19,12 @@
   "author": "Claudio Fernando Maciel <claudio@pipeleap.com>",
   "license": "UNLICENSED",
   "dependencies": {
-    "@railroad/locomotive": "0.3.7",
-    "@railroad/wagon": "0.3.7",
     "@railroad/courier": "0.1.0",
-    "@railroad/operator": "0.4.9",
+    "@railroad/locomotive": "0.4.6",
+    "@railroad/operator": "0.5.4",
+    "@railroad/wagon": "0.4.6",
     "body-parser": "^1.19.0",
+    "node-rdkafka": "^2.7.4",
     "portscanner": "^2.2.0"
   },
   "devDependencies": {
